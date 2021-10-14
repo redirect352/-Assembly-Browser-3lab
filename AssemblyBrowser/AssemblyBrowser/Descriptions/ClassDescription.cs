@@ -4,17 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace AssemblyBrowser
 {
-    class ClassDescription
+    public class ClassDescription
     {
+        [JsonPropertyName("")]
         public String Name { get; internal set; }
         public ClassDescription parentClass = null;
         internal List<ClassDescription> childClasses = new List<ClassDescription>();   
-        internal List<MethodDectription> methods = new List<MethodDectription>();
-        internal List<PropertyDescription> properties = new List<PropertyDescription>();
-        internal List<FieldDesctription> fieldDesctriptions = new List<FieldDesctription>();
+        
+        [JsonInclude]
+        public List<MethodDectription> methods = new List<MethodDectription>();
+        [JsonInclude]
+
+        public List<PropertyDescription> properties = new List<PropertyDescription>();
+        [JsonInclude]
+
+        public List<FieldDesctription> fields = new List<FieldDesctription>();
 
         public ClassDescription()
         {

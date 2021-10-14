@@ -5,13 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using AssemblyBrowser.DescriptionsGenerators;
+using System.Text.Json.Serialization;
 
 namespace AssemblyBrowser
 {
     public class AssemblyViever
     {
-        List<NamespaceDescription> namespaces = new List<NamespaceDescription>();
+        private List<NamespaceDescription> namespaces1 = new List<NamespaceDescription>();
 
+      
+        public List<NamespaceDescription> namespaces { get { return namespaces1; } }
+        [JsonIgnore]
         public String AssemblyName { get; private set; }
 
         public void VievAssembly()
@@ -46,6 +50,9 @@ namespace AssemblyBrowser
                 currentClass = classAnalizer.GenerateClassDescription(type);
                 current.Classes.Add(currentClass);
             }
+
+
+
             string end = "";
             end = "fweef";
         }
