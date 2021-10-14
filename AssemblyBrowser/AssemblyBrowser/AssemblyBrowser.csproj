@@ -42,11 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyViever.cs" />
-    <Compile Include="ClassDescription.cs" />
-    <Compile Include="FieldDesctription.cs" />
-    <Compile Include="MethodDectription.cs" />
+    <Compile Include="DescriptionsGenerators\ClassAnalizer.cs" />
+    <Compile Include="DescriptionsGenerators\NamespaceAnalizer.cs" />
+    <Compile Include="Descriptions\ClassDescription.cs" />
+    <Compile Include="Descriptions\FieldDesctription.cs" />
+    <Compile Include="Descriptions\MethodDectription.cs" />
+    <Compile Include="Descriptions\NamespaceDescription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyDescription.cs" />
+    <Compile Include="Descriptions\PropertyDescription.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
