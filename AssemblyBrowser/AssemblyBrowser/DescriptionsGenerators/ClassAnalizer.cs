@@ -13,9 +13,9 @@ namespace AssemblyBrowser.DescriptionsGenerators
         {
             ClassDescription description = new ClassDescription();
             description.Name = thisClass.Name;
-            description.Members2.Add("Properties", new List<MemberDescription>());
-            description.Members2.Add("Methods", new List<MemberDescription>());
-            description.Members2.Add("Fields", new List<MemberDescription>());
+            description.Members.Add("Properties", new List<MemberDescription>());
+            description.Members.Add("Methods", new List<MemberDescription>());
+            description.Members.Add("Fields", new List<MemberDescription>());
 
             this.GetMethodsDescriptions(thisClass,description);
             this.GetFieldsDescriptions(thisClass, description);
@@ -68,7 +68,7 @@ namespace AssemblyBrowser.DescriptionsGenerators
             {
 
 
-                classDescription.Members2["Methods"].Add(methodAnalizer.GenerateMethodDescription(info));
+                classDescription.Members["Methods"].Add(methodAnalizer.GenerateMethodDescription(info));
             }
         }
 
@@ -78,7 +78,7 @@ namespace AssemblyBrowser.DescriptionsGenerators
             foreach (PropertyInfo propertyInfo in type.GetProperties())
             {
    
-                classDescription.Members2["Properties"].Add(propertyAnalizer.GeneratePropertyDescription(propertyInfo));
+                classDescription.Members["Properties"].Add(propertyAnalizer.GeneratePropertyDescription(propertyInfo));
             }
 
 
@@ -90,7 +90,7 @@ namespace AssemblyBrowser.DescriptionsGenerators
             foreach (FieldInfo fieldInfo in type.GetFields())
             {
 
-                classDescription.Members2["Fields"].Add(fieldAnalizer.GetFieldDesctription(fieldInfo));
+                classDescription.Members["Fields"].Add(fieldAnalizer.GetFieldDesctription(fieldInfo));
             }
         }
 

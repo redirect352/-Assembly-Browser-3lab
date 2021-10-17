@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyBrowser", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly Viever", "Assembly Viever\Assembly Viever.csproj", "{2978C282-9BD5-4ADD-AA14-D33C234D734A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyVievTests", "AssemblyVievTests\AssemblyVievTests.csproj", "{993C60DF-13B2-488B-B130-8E2EFCE5469F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2978C282-9BD5-4ADD-AA14-D33C234D734A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2978C282-9BD5-4ADD-AA14-D33C234D734A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2978C282-9BD5-4ADD-AA14-D33C234D734A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993C60DF-13B2-488B-B130-8E2EFCE5469F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993C60DF-13B2-488B-B130-8E2EFCE5469F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993C60DF-13B2-488B-B130-8E2EFCE5469F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993C60DF-13B2-488B-B130-8E2EFCE5469F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

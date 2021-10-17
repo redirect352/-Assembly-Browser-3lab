@@ -13,9 +13,8 @@ namespace AssemblyBrowser
 
         public String Name { get; internal set; }
   
-        public List<MemberDescription> Members { get; set; } = new List<MemberDescription>();
 
-        public Dictionary<string, List<MemberDescription>> Members2 { get; set; } = new Dictionary<string, List<MemberDescription>>();
+        public Dictionary<string, List<MemberDescription>> Members { get; set; } = new Dictionary<string, List<MemberDescription>>();
 
         public ClassDescription()
         {
