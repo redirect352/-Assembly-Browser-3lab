@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using AssemblyBrowser.DescriptionsGenerators;
-using System.Text.Json.Serialization;
+
 
 namespace AssemblyBrowser
 {
@@ -15,11 +15,12 @@ namespace AssemblyBrowser
 
       
         public List<NamespaceDescription> namespaces { get { return namespaces1; } }
-        [JsonIgnore]
-        public String AssemblyName { get; private set; }
+
+        public string AssemblyName { get; private set; }
 
         public void VievAssembly()
         {
+            this.CloseAssembly();
             Assembly assembly = Assembly.GetExecutingAssembly(); 
             Type[] types = assembly.GetTypes();
             NamespaceAnalizer analizer = new NamespaceAnalizer();
@@ -33,20 +34,13 @@ namespace AssemblyBrowser
                 if (!type.IsClass)
                     continue;
 
-                parent = analizer.GetParentNamespace(type.Namespace, namespaces);
-                current = analizer.GenerateNamespaceDescription(type.Namespace, parent);
-                if (parent == null)
+                current = namespaces.Find((NamespaceDescription description) => (description.Name == type.Namespace));
+                if (  current == null ) 
                 {
+                    current = analizer.GenerateNamespaceDescription(type.Namespace);
                     namespaces.Add(current);
-                }
-                else if (parent.Name != current.Name)
-                {
-                    parent.ChildNamespaces.Add(current);
-                }
-                else {
-                    current = parent;
-                }
-
+                } 
+                     
                 currentClass = classAnalizer.GenerateClassDescription(type);
                 current.Classes.Add(currentClass);
             }
@@ -57,6 +51,12 @@ namespace AssemblyBrowser
             end = "fweef";
         }
 
+        public void CloseAssembly()
+        {
+            namespaces1 = new List<NamespaceDescription>();
+            AssemblyName = "";
+
+        }
 
     }
 }

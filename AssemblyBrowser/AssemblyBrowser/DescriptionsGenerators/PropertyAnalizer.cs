@@ -10,13 +10,12 @@ namespace AssemblyBrowser.DescriptionsGenerators
     class PropertyAnalizer
     {
 
-        public PropertyDescription GeneratePropertyDescription(PropertyInfo propertyInfo)
+        public MemberDescription GeneratePropertyDescription(PropertyInfo propertyInfo)
         {
-            PropertyDescription propertyDescription = new PropertyDescription();
             StringBuilder builder = new StringBuilder();
             this.GetPropertyMainInfo(propertyInfo,builder);
-            propertyDescription.PropertySignature = builder.ToString();
-            return propertyDescription;
+            MemberDescription description = new MemberDescription(builder.ToString(), "property");
+            return description;
         }
 
         private void GetPropertyMainInfo(PropertyInfo propertyInfo, StringBuilder builder)

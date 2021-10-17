@@ -10,14 +10,14 @@ namespace AssemblyBrowser.DescriptionsGenerators
     class FieldAnalizer
     {
 
-        public FieldDesctription GetFieldDesctription(FieldInfo fieldInfo)
+        public MemberDescription GetFieldDesctription(FieldInfo fieldInfo)
         {
-            FieldDesctription desctription = new FieldDesctription();
+            
             StringBuilder builder = new StringBuilder();
             this.GetFieldModifiers(fieldInfo, builder);
             this.GetFieldMainInfo(fieldInfo, builder);
-            desctription.Name = builder.ToString();
-            return desctription;
+            MemberDescription description = new MemberDescription(builder.ToString(), "field");
+            return description;
         }
 
         private void GetFieldMainInfo(FieldInfo fieldInfo, StringBuilder builder) 

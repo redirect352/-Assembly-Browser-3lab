@@ -9,10 +9,10 @@ namespace AssemblyBrowser.DescriptionsGenerators
 {
     internal class MethodAnalizer
     {
-        public MethodDectription GenerateMethodDescription(MethodInfo methodInfo) 
+        public MemberDescription GenerateMethodDescription(MethodInfo methodInfo) 
         {
+
             
-            MethodDectription dectription = new MethodDectription();
             StringBuilder builder = new StringBuilder();
             this.GetMethodSecurityDescriprion(methodInfo, builder);
             
@@ -20,7 +20,7 @@ namespace AssemblyBrowser.DescriptionsGenerators
             this.GetMethodMainInfo(methodInfo, builder);
  
             this.GetMethodParameters(methodInfo, builder);
-            dectription.MethodSignature = builder.ToString();
+            MemberDescription dectription = new MemberDescription(builder.ToString(), "method");
             return dectription;
         }
 
