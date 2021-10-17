@@ -25,10 +25,11 @@ namespace Assembly_Viever
                            try
                            {
                                OpenFileDialog openFileDialog = new OpenFileDialog();
+                               openFileDialog.Filter = "Dynamic Link Library|*.DLL";
                                if (openFileDialog.ShowDialog() == true)
                                {
 
-                                   this.Assembly.VievAssembly();
+                                   this.Assembly.VievAssembly(openFileDialog.FileName);
                                    this.namespaces = Assembly.namespaces;
                                    OnPropertyChanged(nameof(namespaces));
                                    

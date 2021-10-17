@@ -18,10 +18,10 @@ namespace AssemblyBrowser
 
         public string AssemblyName { get; private set; }
 
-        public void VievAssembly()
+        public void VievAssembly( string path )
         {
             this.CloseAssembly();
-            Assembly assembly = Assembly.GetExecutingAssembly(); 
+            Assembly assembly =Assembly.LoadFrom(path); 
             Type[] types = assembly.GetTypes();
             NamespaceAnalizer analizer = new NamespaceAnalizer();
             ClassAnalizer classAnalizer = new ClassAnalizer();
@@ -44,11 +44,6 @@ namespace AssemblyBrowser
                 currentClass = classAnalizer.GenerateClassDescription(type);
                 current.Classes.Add(currentClass);
             }
-
-
-
-            string end = "";
-            end = "fweef";
         }
 
         public void CloseAssembly()

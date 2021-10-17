@@ -9,8 +9,9 @@
     <Grid Margin="3,6,3.6,10.4">
         <Menu Margin="10,0,1178,647" >
             <MenuItem Height="25" Width="85" Header="Menu" FontSize="14">
-                <MenuItem Header="Open"  Command="{Binding OpenCommand}" FontSize="13" Height="20" Margin="0,0,-1.8,0"/>
-                <MenuItem Header="Close"  Command="{Binding CloseCommand}" FontSize="13" Height="20" Margin="0,0,-1.8,0"/>
+                <MenuItem Header="Open assembly"  Command="{Binding OpenCommand}" FontSize="13" Height="20" Margin="0,0,-1.8,0"/>
+                <MenuItem Header="Close assembly"  Command="{Binding CloseCommand}" FontSize="13" Height="20" Margin="0,0,-1.8,0"/>
+                
             </MenuItem>
         </Menu>
 
